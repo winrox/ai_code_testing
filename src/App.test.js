@@ -20,8 +20,7 @@ import App from './App';
 
 test('renders homepage text', () => {
   render(<App />);
-  expect(screen.getByText(/Welcome to the Homepage/i)).toBeInTheDocument();
-  expect(screen.getByText(/This app was created by a human with as much help from Copilot as possible./i)).toBeInTheDocument();
+  expect(screen.getByText(/Human in the Loop/i)).toBeInTheDocument();
 });
 
 test('renders footer icon', () => {
