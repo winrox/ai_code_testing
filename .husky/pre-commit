@@ -1,6 +1,12 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+echo "...running lint and tests"
+
 npx lint-staged
+
+echo "...linted"
+
+yarn test
 
 echo "All tests completed successfully." 
