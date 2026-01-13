@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import MapComponent from './components/Map';
-import { FaRobot } from 'react-icons/fa';
+import { ReactComponent as CoPilotText } from './assets//githubcopilot-text.svg';
+import { ReactComponent as CoPilotIcon } from './assets/githubcopilot-icon.svg';
 
 function App() {
   return (
@@ -14,7 +15,13 @@ function App() {
       </div>
       <footer className="app-footer">
         <p>
-          This page was created using <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer">GitHub Copilot&nbsp;<FaRobot className="copilot-icon" /></a>
+          This page was created using&nbsp;
+          <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer" className="copilot-link
+          ">
+            <CoPilotText className="copilot-text-icon" />
+            &nbsp;
+            <CoPilotIcon className="copilot-icon" style={{ fontSize: '1.4rem', verticalAlign: 'middle' }} />
+          </a>
         </p>
       </footer>
     </div>

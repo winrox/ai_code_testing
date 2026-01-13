@@ -39,7 +39,15 @@
   text-decoration: underline;
 }
 
-.copilot-icon {
-  font-size: 1.5rem;
-  vertical-align: bottom;
+.copilot-link {
+  font-size: 1.1rem;
+  vertical-align: middle;
+}
+
+.copilot-link svg path {
+  fill: #f0f4f8;
+}
+
+.copilot-link:hover svg path {
+  fill: #84c5f4;
 }

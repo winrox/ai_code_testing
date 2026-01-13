@@ -23,9 +23,14 @@ test('renders homepage text', () => {
   expect(screen.getByText(/Human in the Loop/i)).toBeInTheDocument();
 });
 
-test('renders footer icon', () => {
+test('renders footer Copilot link and its icons', () => {
   render(<App />);
-  const icon = screen.getByText(/GitHub Copilot/i).querySelector('.copilot-icon');
+  const footer = screen.getByText(/This page was created using/i);
+  const link = footer.querySelector('.copilot-link');
+  const copilotText = footer.querySelector('.copilot-text-icon');
+  const copilotIcon = footer.querySelector('.copilot-icon');
 
-  expect(icon).toBeInTheDocument();
+  expect(link).toBeInTheDocument();
+  expect(copilotText).toBeInTheDocument();
+  expect(copilotIcon).toBeInTheDocument();
 });
