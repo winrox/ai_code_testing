@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "maplibre-gl": "^5.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.5.0",
@@ -26,7 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --all --watchAll=false",
+    "test": "react-scripts test --all --watchAll=false --env=./custom-test-env.cjs",
     "eject": "react-scripts eject",
     "prepare": "husky install"
   },
