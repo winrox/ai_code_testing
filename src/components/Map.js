@@ -10,7 +10,7 @@ const MapComponent = () => {
       container: mapContainerRef.current,
       style: 'https://demotiles.maplibre.org/style.json', // MapLibre demo style
       center: [-97.7431, 30.2672], // Austin, TX [longitude, latitude]
-      zoom: 10, // Zoom level
+      zoom: 2, // Zoom level
     });
 
     map.on('load', () => {
@@ -26,7 +26,9 @@ const MapComponent = () => {
                 type: 'Point',
                 coordinates: [-97.7431, 30.2672], // Austin, TX coordinates
               },
-              properties: {},
+              properties: {
+                'name': '♥️' 
+              },
             },
           ],
         },
@@ -37,22 +39,19 @@ const MapComponent = () => {
         id: 'austin-heart-layer',
         type: 'symbol',
         source: 'austin-heart',
-        layout: {
-          'icon-image': 'heart-icon', // Reference the custom icon
-          'icon-size': 1.5,
+        'layout': {
+          'text-field': ['get', 'name'], // Display 'name' property from GeoJSON
+          'text-font': ['Open Sans Bold', 'Arial Unicode MS Regular'], // Example fonts
+          'text-anchor': 'center',
+          'text-size': 16
         },
+        'paint': {
+          'text-color': '#ca3141',
+          'text-halo-color': '#fff',
+          'text-halo-width': 1
+        }
       });
 
-      // Add the heart icon to the map
-      map.loadImage(
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Heart_corazón.svg/1024px-Heart_corazón.svg.png',
-        (error, image) => {
-          if (error) throw error;
-          if (!map.hasImage('heart-icon')) {
-            map.addImage('heart-icon', image);
-          }
-        }
-      );
     });
 
     return () => map.remove(); // Clean up on component unmount
