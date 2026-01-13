@@ -7,8 +7,7 @@ function App() {
   return (
     <div className="app-container">
       <header className="app-header">
-        <h1>Welcome to the Homepage</h1>
-        <p>This app was created by a human with as much help from Copilot as possible.</p>
+        <h1>Human in the Loop</h1>
       </header>
       <div className="main">
         <MapComponent />
