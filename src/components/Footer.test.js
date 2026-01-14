@@ -1,3 +1,4 @@
+import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
@@ -13,7 +14,7 @@ jest.mock('maplibre-gl', function() {
   };
 });
 
-import App from './App';
+import App from '../App';
 
 test('renders header title', () => {
   render(<App />);
