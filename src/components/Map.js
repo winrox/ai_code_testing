@@ -6,11 +6,35 @@ const MapComponent = () => {
   const mapContainerRef = useRef(null);
 
   useEffect(() => {
+    const osmRasterStyle = {
+      version: 8,
+      sources: {
+        osm: {
+          type: 'raster',
+          tiles: [
+            'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png'
+          ],
+          tileSize: 256,
+          maxzoom: 19
+        }
+      },
+      layers: [
+        {
+          id: 'osm-tiles',
+          type: 'raster',
+          source: 'osm',
+          minzoom: 0,
+          maxzoom: 19
+        }
+      ]
+    };
+
     const map = new maplibregl.Map({
       container: mapContainerRef.current,
-      style: 'https://demotiles.maplibre.org/style.json', // MapLibre demo style
+      style: osmRasterStyle, // use OSM raster tiles with higher maxzoom for more detail
       center: [-97.7431, 30.2672], // Austin, TX [longitude, latitude]
-      zoom: 2, // Zoom level
+      zoom: 10, // start zoomed in so cities/states are visible
+      maxZoom: 19
     });
 
     map.on('load', () => {
@@ -41,14 +65,12 @@ const MapComponent = () => {
         source: 'austin-heart',
         'layout': {
           'text-field': ['get', 'name'], // Display 'name' property from GeoJSON
-          'text-font': ['Open Sans Bold', 'Arial Unicode MS Regular'], // Example fonts
+          'text-font': ['Open Sans Bold', 'Arial Unicode MS Regular'],
           'text-anchor': 'center',
-          'text-size': 16
+          'text-size': 24
         },
         'paint': {
-          'text-color': '#ca3141',
-          'text-halo-color': '#fff',
-          'text-halo-width': 1
+          'text-color': '#e11d48'
         }
       });
 
