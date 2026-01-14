@@ -90,11 +90,11 @@ const MapComponent = () => {
           'line-cap': 'round'
         },
         paint: {
-          'line-color': '#ff0077',
+          'line-color': '#3452eb',
           'line-width': 3,
           'line-opacity': 0.9
         },
-        minzoom: 11
+        minzoom: 10
       });
     });
 
