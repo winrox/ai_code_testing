@@ -16,7 +16,7 @@ const Footer = () => {
         >
           <CoPilotText className="copilot-text-icon" />
           &nbsp;
-          <CoPilotIcon className="copilot-icon" style={{ fontSize: '1.4rem', verticalAlign: 'middle' }} />
+          <CoPilotIcon className="copilot-icon" id="gh-copilot-icon" />
         </a>
       </p>
     </footer>

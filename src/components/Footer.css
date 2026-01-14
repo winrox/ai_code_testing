@@ -16,6 +16,10 @@
   align-items: end;
 }
 
+#gh-copilot-icon {
+  font-size: 1.4rem;
+}
+
 .copilot-link svg path {
   fill: #f0f4f8;
 }
