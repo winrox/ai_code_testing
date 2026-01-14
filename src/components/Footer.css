@@ -1,0 +1,25 @@
+.app-footer {
+  padding: 1rem;
+  background-color: #334e68;
+  color: #f0f4f8;
+}
+
+.app-footer a {
+  color: #84c5f4;
+  text-decoration: none;
+}
+
+.copilot-link {
+  font-size: 1.1rem;
+  vertical-align: bottom;
+  display: inline-flex;
+  align-items: end;
+}
+
+.copilot-link svg path {
+  fill: #f0f4f8;
+}
+
+.copilot-link:hover svg path {
+  fill: #84c5f4;
+}

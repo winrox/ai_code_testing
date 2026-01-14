@@ -1,6 +1,7 @@
 import React from 'react';
 import { ReactComponent as CoPilotText } from '../assets/githubcopilot-text.svg';
 import { ReactComponent as CoPilotIcon } from '../assets/githubcopilot-icon.svg';
+import './Footer.css';
 
 const Footer = () => {
   return (
