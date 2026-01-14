@@ -33,7 +33,7 @@ const MapComponent = () => {
       container: mapContainerRef.current,
       style: osmRasterStyle, // use OSM raster tiles with higher maxzoom for more detail
       center: [-97.7431, 30.2672], // Austin, TX [longitude, latitude]
-      zoom: 10, // start zoomed in so cities/states are visible
+      zoom: 2,
       maxZoom: 19
     });
 
