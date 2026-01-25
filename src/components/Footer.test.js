@@ -6,10 +6,12 @@ import { render, screen } from '@testing-library/react';
 jest.mock('maplibre-gl', function() {
   return {
     Map: function() {
-      return {
+      const instance = {
         on: jest.fn(),
         remove: jest.fn(),
       };
+      (globalThis.__MAP_INSTANCES__ = globalThis.__MAP_INSTANCES__ || []).push(instance);
+      return instance;
     },
   };
 });

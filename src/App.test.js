@@ -6,14 +6,17 @@ import '@testing-library/jest-dom';
 jest.mock('maplibre-gl', function() {
   return ({
     Map: function() {
-      return ({
+      const instance = {
         on: jest.fn(),
         remove: jest.fn(),
-        // Add other methods and properties as needed
-      })
+        addSource: jest.fn(),
+        addLayer: jest.fn(),
+        getSource: jest.fn(),
+      };
+      (globalThis.__MAP_INSTANCES__ = globalThis.__MAP_INSTANCES__ || []).push(instance);
+      return instance;
     },
-    // Mock other exports as needed
-  })
+  });
 });
 
 import App from './App';
